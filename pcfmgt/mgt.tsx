@@ -15,16 +15,15 @@ export const MGT = React.memo((props: any) => {
     const { instance } = useMsal();
     const [people, setPeople] = useState([]);
 
-
-
     useEffect(() => {
 
         Providers.globalProvider = new Msal2Provider({
             clientId: '***ClientID***',
-            authority: "https://login.microsoftonline.com/***TenantId***",
+            authority: "https://login.microsoftonline.com/***TenantID***",
             redirectUri: "http://localhost:8181",
             scopes: ["Directory.Read.All","People.Read","Presence.Read.All","User.Read","User.Read.All"]
         });
+        
     },[]);
 
     const handleSelectionChanged = (e:any) => {
