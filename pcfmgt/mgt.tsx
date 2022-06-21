@@ -40,7 +40,7 @@ export const MGT = React.memo((props: any) => {
             <Person personQuery="me" />
             Selected People: <People people={people} />
 
-            <Person ref={personRef} personQuery="adnan.gondal@bouvet.no" />
+            <Person ref={personRef} personQuery="testuser@contoso.no" />
             <People
                ref={peopleRef}
                peopleQueries={arr}
