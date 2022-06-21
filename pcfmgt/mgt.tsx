@@ -15,21 +15,29 @@ export const MGT = React.memo((props: any) => {
     const { instance } = useMsal();
     const [people, setPeople] = useState([]);
 
-    useEffect(() => {
+    const peop: any[] = [{
+        id: "1",
+        displayName: "Antonio",
+        mail: "adnan.gondal@bouvet.no",
+        userPrincipalName: "adnan.gondal@bouvet.no",
+        imAddress: "adnan.gondal@bouvet.no"
+        
+        }, {
+        id: "2",
+        displayName: "Daniel",
+        mail: "adnan.gondal@bouvet.no",
+        userPrincipalName: "adnan.gondal@bouvet.no",
+        imAddress: "adnan.gondal@bouvet.no"
+        }];
 
+    useEffect(() => {
+        console.log('Test...');
         Providers.globalProvider = new Msal2Provider({
-            clientId: '',
-            authority: "https://login.microsoftonline.com/",
+            clientId: '40b57631-f041-46bc-838e-1b96cba1fe0e',
+            authority: "https://login.microsoftonline.com/c317fa72-b393-44ea-a87c-ea272e8d963d",
             redirectUri: "http://localhost:8181",
             scopes: ["Directory.Read.All","People.Read","Presence.Read.All","User.Read","User.Read.All"]
         });
-
-        Providers.globalProvider.getAccessToken({scopes: ["User.Read.All"] });
-
-        // requestProfileData();
-
-        return () => console.log("Unmounting..");
-
     },[]);
 
     const requestProfileData = () => {
@@ -65,7 +73,8 @@ export const MGT = React.memo((props: any) => {
     return (
         <>
             <h1>MGT Test</h1>
-            <PeoplePicker selectionChanged={handleSelectionChanged}></PeoplePicker>
+            {/* <PeoplePicker selectionChanged={handleSelectionChanged}></PeoplePicker> */}
+            <PeoplePicker people={people} selectionMode='single' />
 
             <Person personQuery="me" />
             Selected People: <People people={people} />

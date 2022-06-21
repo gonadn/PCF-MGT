@@ -50,6 +50,6 @@ export class pcfmgt implements ComponentFramework.StandardControl<IInputs, IOutp
 
     public destroy(): void
     {
-        // Add code to cleanup control if necessary
+        this.root.unmount();
     }
 }
