@@ -20,7 +20,7 @@ export class pcfmgt implements ComponentFramework.StandardControl<IInputs, IOutp
         //this.props.numberOfFaces = context.parameters.numberOfFaces.raw || DEFAULT_NUMBER_OF_FACES;
         context.mode.trackContainerResize(true);
         console.log(context);
-        //let test = context.resources.getResource("right-arrow", this.setImage.bind(this, false, ".png"),this.showError.bind(this));
+        //let testt = context.resources.getResource("right-arrow", this.setImage.bind(this, false, ".png"),this.showError.bind(this));
         //console.log(test);
 
         this.container = container;

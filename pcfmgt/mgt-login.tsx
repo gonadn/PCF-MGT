@@ -11,7 +11,7 @@ export const MGTLogin = React.memo((props: any) => {
     useEffect(() => {
 
         Providers.globalProvider = new Msal2Provider({
-            clientId: '***ClientID***',
+            clientId: '***ClientID****',
             authority: "https://login.microsoftonline.com/***TenantID***",
             redirectUri: "http://localhost:8181",
             scopes: ["Directory.Read.All","People.Read","Presence.Read.All","User.Read","User.Read.All"]
